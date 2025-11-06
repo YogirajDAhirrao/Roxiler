@@ -93,4 +93,15 @@ exports.authService = {
             return "Password updated successfully";
         });
     },
+    getCurrentUser(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const user = yield client_js_1.default.user.findUnique({
+                where: { id },
+                select: { id: true, name: true, email: true, role: true },
+            });
+            if (!user)
+                throw new Error("User not found");
+            return user;
+        });
+    },
 };

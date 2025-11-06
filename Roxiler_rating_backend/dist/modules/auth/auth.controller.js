@@ -9,7 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.logout = exports.changePassword = exports.login = exports.register = void 0;
+exports.getMe = exports.logout = exports.changePassword = exports.login = exports.register = void 0;
 const auth_service_1 = require("./auth.service");
 const config_1 = require("../../config");
 const register = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
@@ -66,3 +66,14 @@ const logout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     res.json({ message: "Logged out successfully" });
 });
 exports.logout = logout;
+//to get the logged in user on page refresh
+const getMe = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const user = yield auth_service_1.authService.getCurrentUser(req.user.id);
+        res.json(user);
+    }
+    catch (err) {
+        next(err);
+    }
+});
+exports.getMe = getMe;

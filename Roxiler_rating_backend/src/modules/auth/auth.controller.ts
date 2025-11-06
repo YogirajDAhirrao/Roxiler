@@ -69,3 +69,17 @@ export const logout = async (req: Request, res: Response) => {
   });
   res.json({ message: "Logged out successfully" });
 };
+
+//to get the logged in user on page refresh
+export const getMe = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const user = await authService.getCurrentUser(req.user!.id);
+    res.json(user);
+  } catch (err) {
+    next(err);
+  }
+};

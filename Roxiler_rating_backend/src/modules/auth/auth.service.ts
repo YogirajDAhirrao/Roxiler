@@ -89,4 +89,12 @@ export const authService = {
 
     return "Password updated successfully";
   },
+  async getCurrentUser(id: number) {
+    const user = await prisma.user.findUnique({
+      where: { id },
+      select: { id: true, name: true, email: true, role: true },
+    });
+    if (!user) throw new Error("User not found");
+    return user;
+  },
 };

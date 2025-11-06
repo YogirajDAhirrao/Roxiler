@@ -8,4 +8,5 @@ router.post("/register", auth_controller_js_1.register);
 router.post("/login", auth_controller_js_1.login);
 router.put("/change-password", auth_middleware_js_1.authMiddleware, auth_controller_js_1.changePassword);
 router.post("/logout", auth_middleware_js_1.authMiddleware, auth_controller_js_1.logout);
+router.get("/me", auth_middleware_js_1.authMiddleware, auth_controller_js_1.getMe);
 exports.default = router;
