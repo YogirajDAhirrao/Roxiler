@@ -9,8 +9,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteStore = exports.updateStore = exports.getStoreById = exports.getAllStores = exports.createStore = void 0;
+exports.deleteStore = exports.updateStore = exports.getStoreById = exports.getAllStores = exports.createStore = exports.getMyStores = void 0;
 const store_service_js_1 = require("./store.service.js");
+const getMyStores = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const stores = yield store_service_js_1.storeService.getMyStores(req.user.id);
+        res.json(stores);
+    }
+    catch (err) {
+        console.log(err);
+        next(err);
+    }
+});
+exports.getMyStores = getMyStores;
 const createStore = (req, res, next) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const store = yield store_service_js_1.storeService.createStore(req.body);

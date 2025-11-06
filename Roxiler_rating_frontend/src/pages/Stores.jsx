@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { getAllStores } from "../api/store.api";
 import { getRatingForStoreByMe, rateStore } from "../api/rating.api";
-import { useAuth } from "../context/AuthContext";
+//import { useAuth } from "../context/AuthContext";
 
 function Stores() {
-  const { user } = useAuth();
+ // const { user } = useAuth();
   const [stores, setStores] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");

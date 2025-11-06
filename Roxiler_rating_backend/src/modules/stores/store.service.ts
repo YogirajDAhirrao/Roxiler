@@ -60,7 +60,6 @@ export const storeService = {
   },
 
   // Get single store with all ratings
-
   async getStoreById(id: number) {
     const store = await prisma.store.findUnique({
       where: { id },
@@ -87,8 +86,14 @@ export const storeService = {
     return { ...store, avgRating };
   },
 
-  // Update store (Admin or Store Owner)
+  //get my store as store owner
+  async getMyStores(id: number) {
+    const stores = await prisma.store.findMany({ where: { ownerId: id },include:{ratings:{include:{user:true}}} });
+    if (!stores) throw new Error("Store not found");
+    return stores;
+  },
 
+  // Update store (Admin or Store Owner)
   async updateStore(
     id: number,
     data: UpdateStoreDTO,

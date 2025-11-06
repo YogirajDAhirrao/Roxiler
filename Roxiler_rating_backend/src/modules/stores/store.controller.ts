@@ -1,6 +1,21 @@
 import { Request, Response, NextFunction } from "express";
 import { storeService } from "./store.service.js";
 
+export const getMyStores = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    
+    const stores = await storeService.getMyStores(req.user!.id);
+    res.json(stores);
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+};
+
 export const createStore = async (
   req: Request,
   res: Response,

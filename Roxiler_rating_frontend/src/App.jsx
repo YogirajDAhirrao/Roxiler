@@ -5,10 +5,11 @@ import Home from "./pages/Home";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 
-import AdminDashboard from "./pages/AdminDashboard";
+import AdminDashboard from "./pages/Dashboard";
 import PublicRoute from "./routes/PublicRoute";
 import PrivateRoute from "./routes/PrivateRoute";
 import Stores from "./pages/Stores";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
   return (
@@ -34,10 +35,10 @@ function App() {
               }
             />
             <Route
-              path="/admin/dashboard"
+              path="/dashboard"
               element={
                 <PrivateRoute>
-                  <AdminDashboard />
+                  <Dashboard />
                 </PrivateRoute>
               }
             />

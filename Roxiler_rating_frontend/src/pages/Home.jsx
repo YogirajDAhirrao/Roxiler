@@ -11,20 +11,21 @@ function Home() {
         Welcome to <span className="text-blue-600">Roxiler Ratings</span> ⭐
       </h1>
       <p className="text-gray-600 text-lg max-w-xl mb-8">
-        Rate your favorite stores and see what others think!  
-        Join our platform to discover top-rated shops and contribute your own reviews.
+        Rate your favorite stores and see what others think! Join our platform
+        to discover top-rated shops and contribute your own reviews.
       </p>
 
       {user ? (
         <div>
           <p className="text-lg text-gray-700 mb-6">
             You are logged in as{" "}
-            <span className="font-semibold text-blue-600">{user.name}</span> ({user.role})
+            <span className="font-semibold text-blue-600">{user.name}</span> (
+            {user.role})
           </p>
 
           {user.role === "ADMIN" && (
             <Link
-              to="/admin/dashboard"
+              to="/dashboard"
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
             >
               Go to Admin Dashboard
@@ -33,10 +34,10 @@ function Home() {
 
           {user.role === "STORE_OWNER" && (
             <Link
-              to="/owner/dashboard"
+              to="/dashboard"
               className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
             >
-              View My Store
+              View My Store(Dashboard)
             </Link>
           )}
 

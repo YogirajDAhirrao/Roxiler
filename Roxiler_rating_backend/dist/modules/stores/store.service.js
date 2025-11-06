@@ -87,6 +87,15 @@ exports.storeService = {
             return Object.assign(Object.assign({}, store), { avgRating });
         });
     },
+    //get my store as store owner
+    getMyStores(id) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const stores = yield client_js_1.default.store.findMany({ where: { ownerId: id }, include: { ratings: { include: { user: true } } } });
+            if (!stores)
+                throw new Error("Store not found");
+            return stores;
+        });
+    },
     // Update store (Admin or Store Owner)
     updateStore(id, data, currentUser) {
         return __awaiter(this, void 0, void 0, function* () {
