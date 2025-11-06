@@ -11,7 +11,7 @@ const router = (0, express_1.Router)();
 router.get("/store/:storeId", rating_controller_js_1.getRatingsByStore);
 // User route — Create or update a rating for a store
 router.post("/", auth_middleware_js_1.authMiddleware, (0, role_middleware_js_1.roleMiddleware)(["USER"]), rating_controller_js_1.rateStore);
-// User route — Get own ratings
+// User route — Get own ratings 
 router.get("/me", auth_middleware_js_1.authMiddleware, (0, role_middleware_js_1.roleMiddleware)(["USER"]), rating_controller_js_1.getMyRatings);
 // Admin route — View all ratings in the system
 router.get("/", auth_middleware_js_1.authMiddleware, (0, role_middleware_js_1.roleMiddleware)(["ADMIN"]), rating_controller_js_1.getAllRatings);

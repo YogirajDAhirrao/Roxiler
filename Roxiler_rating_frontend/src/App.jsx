@@ -8,6 +8,7 @@ import Register from "./pages/auth/Register";
 import AdminDashboard from "./pages/AdminDashboard";
 import PublicRoute from "./routes/PublicRoute";
 import PrivateRoute from "./routes/PrivateRoute";
+import Stores from "./pages/Stores";
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
                 </PrivateRoute>
               }
             />
+            <Route path="/stores" element={<Stores />} />
           </Route>
         </Routes>
       </BrowserRouter>

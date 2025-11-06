@@ -20,7 +20,7 @@ router.get("/store/:storeId", getRatingsByStore);
 // User route — Create or update a rating for a store
 router.post("/", authMiddleware, roleMiddleware(["USER"]), rateStore);
 
-// User route — Get own ratings
+// User route — Get own ratings 
 router.get("/me", authMiddleware, roleMiddleware(["USER"]), getMyRatings);
 
 // Admin route — View all ratings in the system
