@@ -1,4 +1,3 @@
-```markdown
 # 🌟 Roxiler Rating Platform
 
 A **full-stack web application** for managing and rating stores — built with **React, Express, PostgreSQL, and Prisma**.
@@ -7,35 +6,37 @@ A **full-stack web application** for managing and rating stores — built with *
 
 ## 🧑‍💼 Roles Supported
 
-- **Admin** – Manage users and stores  
-- **Store Owner** – View their store & customer ratings  
-- **Normal User** – Browse stores and rate them  
+* **Admin** – Manage users and stores
+* **Store Owner** – View their store & customer ratings
+* **Normal User** – Browse stores and rate them
 
 ---
 
 ## 🚀 Tech Stack
 
 ### 🖥️ Frontend
-- **React + Vite**
-- **React Router DOM**
-- **TailwindCSS**
-- **Context API** (for Authentication)
-- **Cookie-based Auth Persistence**
+
+* **React + Vite**
+* **React Router DOM**
+* **TailwindCSS**
+* **Context API** (for Authentication)
+* **Cookie-based Auth Persistence**
 
 ### ⚙️ Backend
-- **Node.js + Express**
-- **PostgreSQL (via Prisma ORM)**
-- **JWT Authentication** (stored in HTTP-only cookies)
-- **Role-Based Access Control (RBAC)**
-- **Zod** (optional) for validation
+
+* **Node.js + Express**
+* **PostgreSQL (via Prisma ORM)**
+* **JWT Authentication** (stored in HTTP-only cookies)
+* **Role-Based Access Control (RBAC)**
+* **Zod** (optional) for validation
 
 ---
 
 ## 📂 Folder Structure
 
 ### 🧩 Backend (`Roxiler_rating_backend/`)
-```
 
+```
 ├── prisma/
 │   ├── schema.prisma
 │   ├── migrations/
@@ -60,12 +61,11 @@ A **full-stack web application** for managing and rating stores — built with *
 │
 ├── .env
 └── package.json
-
 ```
 
-### 🖼️ Frontend (`Roxiler_rating_frontend/`)
-```
+### 🖾️ Frontend (`Roxiler_rating_frontend/`)
 
+```
 ├── src/
 │   ├── api/
 │   │   ├── client.js
@@ -86,45 +86,50 @@ A **full-stack web application** for managing and rating stores — built with *
 │   └── main.jsx
 │
 └── tailwind.config.js
-
-````
+```
 
 ---
 
 ## 🧠 Features
 
 ### 👩‍💼 Admin
-- Add new stores, users, and admins  
-- View dashboard with totals for:
-  - Users  
-  - Stores  
-  - Ratings  
-- Filter users and stores by name/email/address  
-- Manage all users and stores  
+
+* Add new stores, users, and admins
+* View dashboard with totals for:
+
+  * Users
+  * Stores
+  * Ratings
+* Filter users and stores by name/email/address
+* Manage all users and stores
 
 ### 👨‍💻 Normal User
-- Register / Login / Logout  
-- View all stores with:
-  - Name  
-  - Address  
-  - Average Rating  
-  - Their Own Rating  
-- Submit or modify ratings (1–5)  
+
+* Register / Login / Logout
+* View all stores with:
+
+  * Name
+  * Address
+  * Average Rating
+  * Their Own Rating
+* Submit or modify ratings (1–5)
 
 ### 🏪 Store Owner
-- View their store and customer ratings  
-- See average rating for their store  
-- View list of users who rated their store  
+
+* View their store and customer ratings
+* See average rating for their store
+* View list of users who rated their store
 
 ---
 
 ## 🔐 Authentication
 
-- **JWT tokens** stored in **HTTP-only cookies** for enhanced security  
-- **Role-based access control (RBAC)** via middleware:
-  - `authMiddleware` → verifies JWT & sets `req.user`  
-  - `roleMiddleware(["ADMIN", "STORE_OWNER"])` → restricts access  
-- **Persistent session** (auto-login on refresh)
+* **JWT tokens** stored in **HTTP-only cookies** for enhanced security
+* **Role-based access control (RBAC)** via middleware:
+
+  * `authMiddleware` → verifies JWT & sets `req.user`
+  * `roleMiddleware(["ADMIN", "STORE_OWNER"])` → restricts access
+* **Persistent session** (auto-login on refresh)
 
 ---
 
@@ -134,7 +139,7 @@ A **full-stack web application** for managing and rating stores — built with *
 DATABASE_URL="postgresql://user:password@localhost:5432/roxiler_db"
 JWT_SECRET="SuperSecretKey"
 PORT=5000
-````
+```
 
 ---
 
@@ -177,6 +182,3 @@ npm run dev
 
 👉 **Frontend:** [http://localhost:5173](http://localhost:5173)
 👉 **Backend:** [http://localhost:5000/api](http://localhost:5000/api)
-
-```
-```
